@@ -1,10 +1,7 @@
-import csv
-
-def read_file():
-    with open('data.csv') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            print(row['date'], row['description'])
+from diary import Diary
 
 if __name__ == '__main__':
-    read_file()
+    diary = Diary()
+    diary.file_read()
+    diary.file_safe('2001-10-01','Hahaha nothing')
+    diary.file_read()
